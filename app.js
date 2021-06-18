@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 // Run the app by serving the static files
 // in the dist directory
-app.use(express.static(__dirname + 'frontend/dist'));
+app.use(express.static(__dirname + 'frontend\dist\frontend'));
 
 // CORS HEADERS MIDDLEWARE
 app.use(function (req, res, next) {
@@ -763,8 +763,8 @@ let deleteTasksFromRoom = (_roomId) => {
     })
 }
 
-const port = process.env.PORT || 8080;
-
+//const port = process.env.PORT || 8080;
+const port = 3000;
 app.listen(port, () => {
     console.log("Server is listening to port 3000");
 })
