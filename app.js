@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+//app.use(requireHTTPS);
 const swaggerUI = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 
@@ -10,6 +11,11 @@ const bodyParser = require('body-parser');
 // Load in the mongoose models
 const { Room, Task, User } = require('./db/models');
 
+//app.get('/*', function(req, res) {
+//    res.sendFile('index.html', {root: __dirname + 'frontend/dist/frontend'}
+//  );
+//  });
+
 /* MIDDLEWARE */
 
 // Load middleware
@@ -17,7 +23,12 @@ app.use(bodyParser.json());
 
 // Run the app by serving the static files
 // in the dist directory
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + 'frontend/dist/frontend'));
+
+app.get('/*', function (req, res) {
+    res.sendFile('index.html', { root: 'frontend/dist/frontend/' }
+    );
+});
 
 // CORS HEADERS MIDDLEWARE
 app.use(function (req, res, next) {
