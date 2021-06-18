@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 // Run the app by serving the static files
 // in the dist directory
-app.use(express.static(__dirname + 'frontend/dist/frontend'));
+app.use(express.static(__dirname + '/frontend/dist/frontend'));
 
 app.get('/*', function (req, res) {
     res.sendFile('index.html', { root: 'frontend/dist/frontend/' }
