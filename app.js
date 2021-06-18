@@ -15,6 +15,10 @@ const { Room, Task, User } = require('./db/models');
 // Load middleware
 app.use(bodyParser.json());
 
+// Run the app by serving the static files
+// in the dist directory
+app.use(express.static(__dirname + 'frontend/dist'));
+
 // CORS HEADERS MIDDLEWARE
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
