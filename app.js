@@ -763,8 +763,8 @@ let deleteTasksFromRoom = (_roomId) => {
     })
 }
 
-//const port = process.env.PORT || 8080;
-const port = 3000;
+const port = process.env.PORT || 8080;
+//const port = 3000;
 app.listen(port, () => {
     console.log("Server is listening to port 3000");
 })
