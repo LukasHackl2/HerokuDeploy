@@ -19,5 +19,8 @@
     "mongoose": "^5.10.13",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "@angular/cli": "~10.2.0"
   }
 }
