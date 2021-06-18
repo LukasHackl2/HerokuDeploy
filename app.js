@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/frontend/dist/frontend'));
 
 app.get('/*', function (req, res) {
-    res.sendFile('index.html', { root: 'frontend/dist/frontend/' }
+    res.sendFile('index.html', { root: __dirname + '/frontend/dist/frontend/' }
     );
 });
 
